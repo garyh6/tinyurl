@@ -3,7 +3,7 @@ module.exports = function (app) {
     app.use(logger);
 
     app.get('/', function (req, res, next) {
-        res.status(200).send("YOU'VE REACHED THE BASE URL OF YOUR API");
+        res.status(200).send(`YOU'VE REACHED THE BASE URL OF YOUR API @ ${process.env.SERVER_PORT}`);
     });
 
     app.use('/collection', require('./collections/collection'));

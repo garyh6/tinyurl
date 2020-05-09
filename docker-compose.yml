@@ -1,0 +1,21 @@
+version : '3'
+
+services:
+    lb:
+        image: haproxy
+        ports:
+            - "8081:8080"
+        volumes:
+            - ./haproxy:/usr/local/etc/haproxy
+    tinyurl1:
+        image: gary/tinyurl
+        environment:
+            - SERVER_PORT=1111
+    tinyurl2:
+        image: gary/tinyurl
+        environment:
+            - SERVER_PORT=2222
+    tinyurl3:
+        image: gary/tinyurl
+        environment:
+            - SERVER_PORT=3333
